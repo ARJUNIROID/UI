@@ -1,77 +1,27 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
 import {
-    View,
-    Text,
-    StyleSheet,
-    Dimensions,
-    ImageBackground,
-    TouchableOpacity,
+    Image,
     SafeAreaView,
+    View
 } from 'react-native'
-import Icon from "react-native-vector-icons/Ionicons"
+import { TouchableOpacity } from "react-native-gesture-handler";
+
 
 const RoundCard = (props) => {
-    const [liked, setLiked] = useState(false)
+    const [border,setBorder] = useState(false)
     return (
-        <SafeAreaView style={{ marginBottom: 20 }}>
-            <ImageBackground
-                style={{ ...styles.container, width: 200, height: 270 }}
-                imageStyle={{ borderRadius: 20 }}
-                source={props.info.image}>
-                <View style={{ flexDirection: "row", marginLeft: 20, marginTop: 20 }}>
-                    <View style={{ flexDirection: "column", marginRight: 30 }}>
-                        <Text style={{ color: "#fff", fontSize: 15, fontFamily: "Inter-Bold" }}>{props.info.title}</Text>
-                        <Text style={{ color: "#fff", fontSize: 9, fontFamily: "Inter-Light" }}>{props.info.description}</Text>
-                    </View>
-                    < TouchableOpacity
-                        onPress={() => {
-                            setLiked(!liked)
-                        }}
-                    >
-                        <Icon
-                            name={liked ? "heart" : "heart-outline"}
-                            color={liked ? "#FE251B" : "#fff"}
-                            size={28}
-                            style={{ marginLeft: "4%" }}
-                        />
-                    </ TouchableOpacity>
-                </View>
-                <TouchableOpacity style={styles.touchableOpacity}>
-                    <Text style={{ color: "#fff" }}>Know more</Text>
-                </TouchableOpacity>
-            </ImageBackground>
+        <TouchableOpacity onPress={()=> setBorder(!border)}>
+        <SafeAreaView style={{ height:70,width:70,borderWidth: border ? 1 : 0,borderRadius:50,borderColor:"#270A5A",justifyContent:"center",alignItems:"center",borderStyle:"dashed"}}>
+            <View style={{ height:60,width:60,backgroundColor:props.info.color,justifyContent:"center",alignItems:"center",borderRadius:50 }}>
+            <Image
+                style={{width: 40, height: 50 }}
+                source={props.info.image}
+                >
+            </Image>
+            </View>
         </SafeAreaView>
+        </TouchableOpacity>
     )
 }
-
-
-const deviceWidth = Math.round(Dimensions.get('window').width);
-const styles = StyleSheet.create({
-    container: {
-        height: 340, 
-        width: 230,
-        borderRadius: 12,
-        elevation: 5,
-        marginVertical: 2,
-    },
-    imageStyle: {
-        width: 220,
-        height: 270,
-        borderWidth: 10,
-        borderRadius: 30
-    },
-    touchableOpacity: {
-        marginTop: "80%",
-        marginLeft: "10%",
-        width: "50%",
-        height: "13%",  
-        borderWidth: 2,
-        borderColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 10,
-    }
-})
-
 
 export default RoundCard;
