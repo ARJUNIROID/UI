@@ -18,6 +18,8 @@ import ProductCard from "../Cards/ProductCard"
 import Swiper2 from "../Swiper/Swiper2"
 import ProductCard2 from "../Cards/ProductCard2"
 
+
+
 const Genres = [ "Headsets" , "Laptops", "Mobiles" , "TV’s" , "Cases", "Speakers" ];
 const Product = [
     {

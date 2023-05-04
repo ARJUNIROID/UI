@@ -2,31 +2,40 @@ import React from "react";
 import {
     View,
     StyleSheet,
-    Text
+    Text,
+    TouchableOpacity,
+    Image
 } from "react-native"
+import ItemSperator from "./ItemSperator";
 
 
-const Specifications = () => {
+const Specifications = (props) => {
     return (
-        <View>
-            <View style={{ marginTop: 15, marginLeft: 20 }}>
-                <Text style={{ fontSize: 15, fontFamily: "Inter-Bold", color: "#000" }}>Specifications</Text>
-            </View>
+        <View style={{backgroundColor:"#fff",width:500}}>
             <View>
                 <View style={{flexDirection:"row",marginLeft:20,marginTop:20}}>
-                    <Text style={{fontSize:11,fontFamily:"Inter-Medium",color:"#000"}}>Transducer type</Text>
-                    <Text style={{marginLeft:"40%",fontSize:11,fontFamily:"Inter-Regular"}}>dynamic</Text>
+                    <View style={{width:170}}>
+                    <Text style={{fontSize:11,fontFamily:"Inter-Medium",color:"#000"}}>{props.info.title}</Text>
+                    </View>
+                    <View style={{flexDirection:"column"}}>
+                    <Text style={{marginLeft:30,fontSize:11,fontFamily:"Inter-Regular"}}>{props.info.description}</Text>
+                    <Text style={{marginLeft:30,fontSize:11,fontFamily:"Inter-Regular"}}>{props.info.description2}</Text>
+                    </View>
                 </View>
                 <View
                     style={{
-                        marginTop:20,
+                        marginTop:10,
                         marginLeft:20,
                         marginRight:20,
                         borderBottomColor: '#AEB0BA',
                         borderBottomWidth: StyleSheet.hairlineWidth,
                     }}
                 />
-                  <View style={{flexDirection:"row",marginLeft:20,marginTop:20}}>
+                  </View>
+        </View>
+    )
+}
+                  {/* <View style={{flexDirection:"row",marginLeft:20,marginTop:20}}>
                     <Text style={{fontSize:11,fontFamily:"Inter-Medium",color:"#000"}}>Operating principle</Text>
                     <Text style={{marginLeft:"36%",fontSize:11,fontFamily:"Inter-Regular"}}>closed</Text>
                 </View>
@@ -120,9 +129,19 @@ const Specifications = () => {
                     }}
                 />
             </View>
+            <View style={{flexDirection:"row",marginTop:20,marginLeft:15}}>
+                <TouchableOpacity style={{height:44,width:154,backgroundColor:"#CF0C0C",borderRadius:7,justifyContent:"center",alignItems:"center"}}>
+                    <Text style={{fontSize:14,color:"#fff",fontFamily:"Inter-Regular"}}>Buy Now</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{height:44,flexDirection:"row",width:154,borderColor:"#CF0C0C",borderWidth:2,marginLeft:20,borderRadius:7,justifyContent:"center",alignItems:"center"}}>
+                    <Image source={require("../../assets/cart.png")}/>
+                    <Text style={{fontSize:14,marginLeft:10,fontFamily:"Inter-Regular",color:"#525252"}}>Add to cart</Text>
+                </TouchableOpacity>
+            </View> */}
+        {/* </View>
         </View>
     )
-}
+} */}
 
 const Styles = StyleSheet.create({
     

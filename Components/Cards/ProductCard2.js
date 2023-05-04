@@ -42,7 +42,7 @@ const ProductCard2 = (props,{navigation}) => {
                         <Text style={{ color: "#fff", fontSize: 13, fontFamily: "Inter-Bold",marginLeft:20,marginTop:10}}>${props.info.price}</Text>
                     </View>
             </View> 
-            <TouchableOpacity onPress={() => navigation.navigate("ProductCardScreen")}>
+            <TouchableOpacity                          >
             <View style={{ width: 195, height: 40, backgroundColor: "#00305B",borderBottomLeftRadius: 30, borderBottomEndRadius: 30 ,justifyContent:"center", alignItems:"center"}}>
                 <Icon2 name="angle-double-down" color="#fff" size={28}/>
             </View>
