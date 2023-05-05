@@ -1,28 +1,28 @@
-// import React from "react";
-// import {
-//     View,
-//     StyleSheet,
-//     Text
-// }from "react-native"
+import React from "react";
+import {
+    View,
+    StyleSheet,
+    Text
+}from "react-native"
 
 
-// const MyCart =() =>{
-//     return(
-//         <View style={Styles.container}>
-//             <Text style={{fontSize:20,fontWeight:"bold"}}>Coming soon !</Text>
-//         </View>
-//     )
-// }
+const MyCart =() =>{
+    return(
+        <View style={Styles.container}>
+            <Text style={{fontSize:20,fontWeight:"bold"}}>Coming soon !</Text>
+        </View>
+    )
+}
 
-// const Styles =StyleSheet.create({
-//     container:{
-//         flex:1,
-//         alignItems:"center",
-//         justifyContent:"center"
-//     }
-// })
+const Styles =StyleSheet.create({
+    container:{
+        flex:1,
+        alignItems:"center",
+        justifyContent:"center"
+    }
+})
 
-// export default MyCart;
+export default MyCart;
 
 
 // import * as Animatable from 'react-native-animatable';
@@ -70,35 +70,35 @@
 
 //   export default ExampleView;
 
-import React, { useState, useEffect } from 'react'
-import { Image } from 'react-native'
-import DocumentScanner from 'react-native-document-scanner-plugin'
+// import React, { useState, useEffect } from 'react'
+// import { Image } from 'react-native'
+// import DocumentScanner from 'react-native-document-scanner-plugin'
 
-export default () => {
-  const [scannedImage, setScannedImage] = useState();
+// export default () => {
+//   const [scannedImage, setScannedImage] = useState();
 
-  const scanDocument = async () => {
-    // start the document scanner
-    const { scannedImages } = await DocumentScanner.scanDocument({
-    })
+//   const scanDocument = async () => {
+//     // start the document scanner
+//     const { scannedImages } = await DocumentScanner.scanDocument({
+//     })
   
-    // get back an array with scanned image file paths
-    if (scannedImages.length > 0) {
-      // set the img src, so we can view the first scanned image
-      setScannedImage(scannedImages[0])
-    }
-  }
+//     // get back an array with scanned image file paths
+//     if (scannedImages.length > 0) {
+//       // set the img src, so we can view the first scanned image
+//       setScannedImage(scannedImages[0])
+//     }
+//   }
 
-  useEffect(() => {
-    // call scanDocument on load
-    scanDocument()
-  }, []);
+//   useEffect(() => {
+//     // call scanDocument on load
+//     scanDocument()
+//   }, []);
 
-  return (
-    <Image
-      resizeMode="contain"
-      style={{ width: '100%', height: '100%' }}
-      source={{ uri: scannedImage }}
-    />
-  )
-}
+//   return (
+//     <Image
+//       resizeMode="contain"
+//       style={{ width: '100%', height: '100%' }}
+//       source={{ uri: scannedImage }}
+//     />
+//   )
+// }

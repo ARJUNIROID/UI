@@ -19,8 +19,6 @@ import ProductCard2 from '../Cards/ProductCard2'
 import ReviewCard from "../Cards/ReviewCard";
 
 
-
-
 const RoundCardData = [
     {
         id: "1",
@@ -43,6 +41,7 @@ const RoundCardData = [
         color: "#242627"
     }
 ]
+
 const Product2 = [
     {
         id: "1",
@@ -131,7 +130,16 @@ const specifications = [
 ]
 
 
+
+
 const ProductCardScreen = ({ navigation }) => {
+    const [count,setCount] = useState(0)
+    increment=()=>{
+        setCount(count-1)
+    }
+    decrement=()=>{
+        setCount(count+1)
+    }
     return (
         <ScrollView style={Styles.container}>
             <View style={{ backgroundColor: "#1A102D" }}>
@@ -163,11 +171,11 @@ const ProductCardScreen = ({ navigation }) => {
                             <Text style={{ fontFamily: "Inter-Light", fontSize: 10, color: "#3A3A3A" }}>Beats By Dre.</Text>
                         </View>
                         <View style={{ flexDirection: "row", marginLeft: "30%", marginTop: 10 }}>
-                            <TouchableOpacity style={{ marginRight: 10, width: 20, height: 20, borderWidth: 2, borderColor: "#000", justifyContent: "center", alignItems: "center", borderRadius: 5 }}>
+                            <TouchableOpacity onPress={increment} style={{ marginRight: 10, width: 20, height: 20, borderWidth: 2, borderColor: "#000", justifyContent: "center", alignItems: "center", borderRadius: 5 }}>
                                 <Text style={{ fontSize: 12, fontWeight: "bold", color: "#000" }}>-</Text>
                             </TouchableOpacity>
-                            <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000" }}>01</Text>
-                            <TouchableOpacity style={{ marginLeft: 10, width: 20, height: 20, borderWidth: 2, borderColor: "#000", justifyContent: "center", alignItems: "center", borderRadius: 5 }}>
+                            <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000" }}>{count}</Text>
+                            <TouchableOpacity onPress={decrement} style={{ marginLeft: 10, width: 20, height: 20, borderWidth: 2, borderColor: "#000", justifyContent: "center", alignItems: "center", borderRadius: 5 }}>
                                 <Text style={{ fontSize: 12, fontWeight: "bold", color: "#000" }}>+</Text>
                             </TouchableOpacity>
                         </View>
